@@ -1,0 +1,5 @@
+/** Artykuły - Lista **/
+.articles article .content {line-height:25px;font-family: "Lato";}
+.articles article .read-more {margin:auto;display: block;width:60px;color:#fff;}
+
+

@@ -1,0 +1,18 @@
+{% extends "VelaCmsWidgetBundle:Widgets:velacms_widget.base.html.twig" %}
+{% block widgetContent %}
+
+{% for item in items %}
+{%  set listItem = item.getListItem %}
+<div class="col-md-4">
+	<article>	
+		<p class="date">{{ listItem.getDate.format('Y-m-d') }}</p>
+		<h1>{{ velacms_text_trim(item.getPage.getTitle,7)|raw }}</h1>
+		<p class="content">{{ velacms_text_trim(item.getListItem.getDescription,80) }}</p>
+		   <a href="{{ velacms_url_get(item.getListItem.getPageId) }}" class="read-more">(więcej...) </a>
+	</article>
+</div>
+
+{% else %}
+<div class="clearfix small-news-item"><h4>Lista jest pusta</h4></div> 
+{% endfor %}
+{% endblock %}
